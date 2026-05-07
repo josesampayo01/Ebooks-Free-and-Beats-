@@ -3,105 +3,354 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tienda J4S Music Records</title>
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+    <title>J4S Music Records | Tormenta de Sonido | Beats & Libros</title>
+    
+    <meta name="description" content="J4S Music Records. Sello discográfico independiente en Magangué. Venta de instrumentales exclusivos (Trap, Reggaetón, Detroit) y el e-book de psicología y marketing 'Soy el crush de mi crush'.">
+    <meta name="keywords" content="J4S Music Records, Beats, Trap, Reggaetón, Detroit Trap, Venta de beats, Producción musical, Soy el crush de mi crush, Sello discográfico, Instrumentales">
+    <meta name="author" content="Jose Antonio Sampayo Martinez">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://josesampayo01.github.io/Ebooks-Free-and-Beats-/">
+
+    <meta property="og:title" content="J4S Music Records | Tormenta de Sonido">
+    <meta property="og:description" content="Desata la tormenta de sonido con J4S Music Records. Beats exclusivos urbanos y conocimiento que transforma.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?q=80&w=1200">
+    <meta property="og:url" content="https://josesampayo01.github.io/Ebooks-Free-and-Beats-/">
+    <meta property="og:type" content="website">
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+    
     <style>
+        /* Variables del Sistema de Diseño - Tormenta Oscura */
         :root {
-            --primary-color: #ff9a9e;
-            --secondary-color: #fecfef;
-            --bg-color: #fffafb;
-            --text-color: #5c4b51;
-            --accent-color: #a1c4fd;
+            --primary-color: #1e90ff; 
+            --secondary-color: #000a1a; 
+            --bg-color: #000000; 
+            --text-color: #e0e6ed; 
+            --card-bg: #111111; 
+            --accent-color: #00c8ff; 
+            --shadow-color: rgba(30, 144, 255, 0.2); 
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Quicksand', sans-serif; }
-        body { background-color: var(--bg-color); color: var(--text-color); }
+        /* Resets y Base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
 
+        html { scroll-behavior: smooth; }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Tipografía de Encabezados */
+        h1, h2, h3 {
+            font-family: 'Oswald', sans-serif; 
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* UI de Navegación */
         header {
-            background-color: white;
-            padding: 1rem 5%;
+            background-color: rgba(0, 0, 0, 0.9);
+            padding: 1.2rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 2px solid var(--primary-color);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(5px);
+        }
+
+        .logo {
+            font-size: 2rem;
+            color: var(--text-color);
+            text-decoration: none;
+        }
+
+        .logo span { color: var(--primary-color); text-shadow: 0 0 10px var(--accent-color); }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: #aaaaaa;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover { color: var(--accent-color); }
+
+        /* Módulo Hero */
+        .hero {
             text-align: center;
-            box-shadow: 0 4px 15px rgba(255, 154, 158, 0.1);
+            padding: 150px 20px;
+            background: 
+                linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.9)),
+                url('https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?q=80&w=1920') center/cover;
+            margin-bottom: 40px;
+            color: #ffffff;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            border-bottom: 3px solid var(--primary-color);
         }
 
-        .logo { font-size: 1.5rem; font-weight: 700; color: var(--primary-color); text-decoration: none; }
-
-        .container { padding: 40px 5%; max-width: 1200px; margin: auto; }
-        
-        .section-title {
-            text-align: center;
-            font-size: 2.2rem;
-            margin-bottom: 30px;
-            color: var(--primary-color);
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem); /* Tipografía fluida */
+            margin-bottom: 20px;
+            color: #ffffff;
+            text-shadow: 0 0 20px var(--primary-color);
         }
 
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
+        .hero p {
+            font-size: clamp(1rem, 2vw, 1.5rem);
+            margin-bottom: 40px;
+            color: #cccccc;
+            font-weight: 600;
         }
 
-        .card {
-            background: white;
-            border-radius: 25px;
-            padding: 20px;
-            text-align: center;
-            border: 2px dashed var(--secondary-color);
-            transition: 0.3s;
-        }
-
-        .card:hover { transform: translateY(-5px); border-color: var(--primary-color); }
-
-        .card img { width: 100%; border-radius: 15px; height: 200px; object-fit: cover; margin-bottom: 15px; }
-        
-        .price { color: var(--accent-color); font-weight: 700; font-size: 1.2rem; margin: 10px 0; }
-
+        /* Componente Botón */
         .btn {
-            background: var(--primary-color);
-            color: white;
-            padding: 10px 20px;
-            border-radius: 20px;
+            background-color: transparent;
+            color: var(--primary-color);
+            padding: 15px 40px;
+            border: 2px solid var(--primary-color);
+            border-radius: 5px; 
+            cursor: pointer;
+            font-size: 1.1rem;
+            font-weight: 700;
             text-decoration: none;
             display: inline-block;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 0 20px var(--primary-color);
+            background-color: var(--primary-color);
+            color: black;
+        }
+
+        /* Sistema de Grillas y Layout */
+        .section-title {
+            text-align: center;
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin: 80px 0 50px;
+            color: var(--text-color);
+            border-bottom: 2px solid var(--secondary-color);
+            display: inline-block;
+            width: 100%;
+            text-shadow: 0 0 15px var(--secondary-color);
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            padding: 0 5%;
+            margin-bottom: 100px;
+            max-width: 1400px; /* Ancho máximo para pantallas grandes */
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Componente Tarjeta */
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 8px; 
+            padding: 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid #222;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card:hover {
+            transform: translateY(-10px) scale(1.02);
+            border-color: var(--accent-color);
+            box-shadow: 0 0 30px var(--shadow-color);
+        }
+
+        .card img {
+            width: 100%;
+            border-radius: 4px;
+            margin-bottom: 25px;
+            height: 200px;
+            object-fit: cover;
+            border-bottom: 3px solid #222;
+            transition: border-color 0.3s ease;
+        }
+
+        .card:hover img { border-color: var(--accent-color); }
+
+        .card h3 { margin-bottom: 15px; color: #ffffff; font-size: 1.5rem; }
+        .card p.price { color: var(--accent-color); font-size: 1.6rem; font-weight: 800; margin-bottom: 20px; font-family: 'Oswald', sans-serif;}
+        .card p.desc { font-size: 1rem; color: #999; margin-bottom: 20px; flex-grow: 1; display: flex; align-items: center; justify-content: center;}
+
+        /* Componente Botones de Redes Sociales */
+        .social-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 0 5%;
+            margin-bottom: 80px;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .social-btn {
+            background-color: #111;
+            color: #ffffff;
+            padding: 15px 30px;
+            border-radius: 5px;
+            text-decoration: none;
             font-weight: 700;
-            margin-top: 10px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border: 1px solid #333;
+            transition: all 0.3s ease;
+            font-size: 1.1rem;
+        }
+
+        .social-btn:hover {
+            border-color: var(--accent-color);
+            color: var(--accent-color);
+            transform: scale(1.05);
+            box-shadow: 0 0 15px var(--shadow-color);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #050505;
+            color: #888;
+            text-align: center;
+            padding: 60px 20px;
+            border-top: 2px solid var(--secondary-color);
+        }
+
+        footer h2 { color: #ffffff; font-size: 2rem; margin-bottom: 15px; }
+        footer p { margin-bottom: 10px; }
+        footer span { color: var(--primary-color); }
+
+        /* Media Queries para Responsive Design */
+        @media (max-width: 768px) {
+            nav ul { display: none; }
+            header { justify-content: center; }
+            .btn { width: 100%; margin-bottom: 15px; margin-left: 0 !important; }
         }
     </style>
 </head>
 <body>
 
-<header>
-    <a href="index.html" class="logo">✨ J4S Music Records ✨</a>
-</header>
+    <header>
+        <a href="#" class="logo">J4S <span>RECORDS</span> 🌩️</a>
+        <nav aria-label="Navegación principal">
+            <ul>
+                <li><a href="#inicio">INICIO</a></li>
+                <li><a href="#beats">BEATS</a></li>
+                <li><a href="#libros">LIBROS</a></li>
+                <li><a href="#redes">REDES</a></li>
+            </ul>
+        </nav>
+    </header>
 
-<div class="container">
-    <h2 class="section-title">Nuestros Beats (Trap & Reggaetón)</h2>
-    <div class="grid">
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?q=80&w=500" alt="Beat">
-            <h3>Detroit Style Trap</h3>
-            <p class="price">$25.00 USD</p>
-            <a href="#" class="btn">Obtener Beat 🎧</a>
-        </div>
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=500" alt="Beat">
-            <h3>Reggaetón Flow</h3>
-            <p class="price">$30.00 USD</p>
-            <a href="#" class="btn">Obtener Beat 🔥</a>
-        </div>
-    </div>
+    <main>
+        <section id="inicio" class="hero">
+            <h1>DESATA LA TORMENTA DE SONIDO 🌪️</h1>
+            <p>J4S Music Records. El poder de los beats y el conocimiento que transforma.</p>
+            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; max-width: 600px; margin: 0 auto;">
+                <a href="#beats" class="btn">EXPLORAR BEATS 🎵</a>
+                <a href="#redes" class="btn" style="border: 2px solid #ffffff; color: #ffffff;">CONECTAR 📱</a>
+            </div>
+        </section>
 
-    <h2 class="section-title" style="margin-top: 50px;">Libros Exclusivos</h2>
-    <div class="grid">
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?q=80&w=500" alt="Libro">
-            <h3>Soy el crush de mi crush</h3>
-            <p style="font-size: 0.9rem;">Psicología y marketing personal.</p>
-            <p class="price">$12.00 USD</p>
-            <a href="#" class="btn">Comprar E-book 📖</a>
-        </div>
-    </div>
-</div>
+        <section aria-labelledby="beats-title">
+            <h2 id="beats-title" class="section-title">⚡ BEATS ELÉCTRICOS ⚡</h2>
+            <div class="grid-container">
+                <article class="card">
+                    <img src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?q=80&w=500" alt="Cover de beat Detroit Trap">
+                    <h3>Detroit Trap Vibes</h3>
+                    <p class="desc">Bajos profundos y melodías que perforan.</p>
+                    <p class="price">$25.00 USD</p>
+                    <button class="btn" aria-label="Adquirir beat Detroit Trap">ADQUIRIR 💖</button>
+                </article>
+                <article class="card">
+                    <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=500" alt="Cover de beat Reggaetón Flow">
+                    <h3>Reggaetón Flow 2026</h3>
+                    <p class="desc">El ritmo urbano para tu próximo éxito masivo.</p>
+                    <p class="price">$30.00 USD</p>
+                    <button class="btn" aria-label="Adquirir beat Reggaetón Flow">ADQUIRIR 💖</button>
+                </article>
+                <article class="card">
+                    <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?q=80&w=500" alt="Cover de beat Trap Latino">
+                    <h3>Trap Latino Mágico</h3>
+                    <p class="desc">Atmósfera comercial y un sonido envolvente.</p>
+                    <p class="price">$20.00 USD</p>
+                    <button class="btn" aria-label="Adquirir beat Trap Latino">ADQUIRIR 💖</button>
+                </article>
+            </div>
+        </section>
+
+        <section aria-labelledby="libros-title">
+            <h2 id="libros-title" class="section-title">📖 EL CONOCIMIENTO ES PODER 📖</h2>
+            <div class="grid-container" style="display: flex; justify-content: center;">
+                <article class="card" style="max-width: 400px; width: 100%;">
+                    <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?q=80&w=500" alt="Portada del e-book Soy el crush de mi crush">
+                    <h3>Soy el crush de mi crush</h3>
+                    <p class="desc">E-book exclusivo. Estrategias de marketing personal.</p>
+                    <p class="price">$12.00 USD</p>
+                    <button class="btn" aria-label="Agregar e-book al carrito">AGREGAR 🛒</button>
+                </article>
+            </div>
+        </section>
+
+        <section aria-labelledby="redes-title">
+            <h2 id="redes-title" class="section-title">🌑 UNIRSE A LA TORMENTA 🌑</h2>
+            <div class="social-container">
+                <a href="https://open.spotify.com/artist/6Fbi5wFxLyxaNDAc306h3K?si=Akq4S5J-SPydGnwH-fMEeQ" target="_blank" rel="noopener noreferrer" class="social-btn">
+                    🟢 SPOTIFY
+                </a>
+                <a href="https://youtube.com/@j4smusicrecords?si=rUtieqaEAe1lABjH" target="_blank" rel="noopener noreferrer" class="social-btn">
+                    🔴 YOUTUBE
+                </a>
+                <a href="https://www.instagram.com/jas_musicrecords?igsh=MThxYWZ1ZWs0YWl2bA%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" class="social-btn">
+                    🟣 INSTAGRAM
+                </a>
+                <a href="https://www.facebook.com/share/18qXjwysxf/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" class="social-btn">
+                    🔵 FACEBOOK 1
+                </a>
+                <a href="https://www.facebook.com/share/17WpmDMbyb/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" class="social-btn">
+                    🔵 FACEBOOK 2
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <h2>J4S Music Records 🌩️</h2>
+        <p>Magangué, Bolívar - Colombia</p>
+        <p>© 2026 <span>J4S Records</span>. Código en producción.</p>
+    </footer>
 
 </body>
 </html>
